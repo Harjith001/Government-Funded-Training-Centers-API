@@ -1,12 +1,20 @@
 import express from "express"
+import { PORT } from "./config/env.js";
+import connectToDatabase from "./database/mongodb.js";
+import {addCenter, getAllCenters} from "./controllers/center.controller.js";
+
+
 
 const app = express();
-const port = 5500;
-app.listen(port,()=>{
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false}));
+
+app.listen(PORT,async ()=>{
     console.log("App running");
+    await connectToDatabase();
 })
 
-app.get('/',(req,res)=>{
-    res.send("API is working properly");
-})
+app.post('/', addCenter);
+app.get('/',getAllCenters);
 
