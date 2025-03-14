@@ -1,0 +1,17 @@
+{
+  "name": "govt-funded-data",
+  "version": "1.0.0",
+  "description": "API to post and get user details with verification at the backend. ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harjith L R S",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1",
+    "nodemon": "^3.1.9"
+  }
+}
